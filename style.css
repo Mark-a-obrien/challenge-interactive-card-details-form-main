@@ -1,0 +1,191 @@
+:root {
+    --color-primary-active-input-border: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+    --color-primary-input-errors: hsl(0, 100%, 66%);
+
+    --color-neutral-white: hsl(0, 0%, 100%);
+    --color-neutral-Light-grayish-violet: hsl(270, 3%, 87%);
+    --color-neutral-dark-grayish-violet: hsl(279, 6%, 55%);
+    --color-neutral-very-dark-violet: hsl(278, 68%, 11%);
+
+
+    --ff-primary: 'Space Grotesk', sans-serif;
+    --fs-primary: 18px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-primary);
+    font-weight: 500;
+}
+
+
+
+
+main.content {
+    background-image: url("images/bg-main-desktop.png");
+    background-repeat: no-repeat;
+    background-color: var(--color-neutral-white);
+    height: 100vh;
+    
+}
+
+section.layout {
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+    padding: 6rem;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card {
+    width: 447px;
+    height: 245px;
+}
+
+/* card front start */
+.card-front {
+    display: flex;
+    flex-direction: column;
+    background-image: url("images/bg-card-front.png");
+    padding: 1.8rem;
+    gap: 4rem;
+}
+
+.card-front .circles {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+.card-front .circle {
+    border-radius: 50%;
+}
+
+.card-front .circle-large {
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-neutral-white);
+}
+
+.card-front .circle-small {
+    width: 20px;
+    height: 20px;
+    outline: 1px solid var(--color-neutral-white);
+}
+
+.card-front  h1#card-num {
+    font-size: 30px;
+    color: var(--color-neutral-white);
+    word-spacing: 2px;
+    letter-spacing: 2px;
+}
+
+.card-front .card-detials {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card-front .card-name-and-date {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-name-and-date #card-name, .card-name-and-date #card-date {
+    font-size: 14px;
+    color: var(--color-neutral-Light-grayish-violet);
+    letter-spacing: 2px;
+}
+
+/* card front end */
+
+
+/* card back start */
+.card-back {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-image: url("images/bg-card-back.png");
+    margin-left: 5rem;
+}
+
+.card-back #card-cvc {
+    font-size: 15px;
+    margin-right: 3rem;
+    letter-spacing: 2px;
+    color: var(--color-neutral-white);
+}
+/* card back end */
+
+
+/* form details start */
+::placeholder {
+    color: var(--color-neutral-dark-grayish-violet);
+}
+
+form.details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+form.details label {
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+form.details .textfield {
+    outline: 1px solid var(--color-neutral-Light-grayish-violet);
+    border-radius: 5px;
+    padding: .6rem;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+form.details .date-and-cvc {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.name-label-and-text, .number-label-and-text, .cvv-label-and-text {
+    display: flex;
+    flex-direction: column;
+}
+
+form.details .date {
+    display: flex;
+    gap: .6rem;
+}
+
+.date #month, #year {
+    width: 75px;
+}
+
+.cvv-label-and-text {
+    margin-top: 5px;
+}
+
+.confirm {
+    height: 55px;
+    border-radius: 5px;
+    background-color: var(--color-neutral-very-dark-violet);
+    color: var(--color-neutral-white);
+}
+
+
+form.details .textfield:focus {
+    outline-color: var(--color-primary-active-input-border);
+}
+
+
+
+/* form details end */
