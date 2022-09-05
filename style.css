@@ -99,10 +99,14 @@ section.layout {
     justify-content: space-between;
 }
 
-.card-name-and-date #card-name, .card-name-and-date #card-date {
+.card-name-and-date #card-name, .card-name-and-date #card-date, #card-month, #card-year {
     font-size: 14px;
     color: var(--color-neutral-Light-grayish-violet);
     letter-spacing: 2px;
+}
+
+#card-date {
+    display: flex;
 }
 
 /* card front end */
@@ -134,7 +138,7 @@ section.layout {
 form.details {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.4rem;
 }
 
 form.details label {
@@ -151,6 +155,8 @@ form.details .textfield {
 }
 
 
+
+
 form.details .date-and-cvc {
     display: flex;
     gap: 1.2rem;
@@ -159,6 +165,10 @@ form.details .date-and-cvc {
 .name-label-and-text, .number-label-and-text, .cvv-label-and-text {
     display: flex;
     flex-direction: column;
+}
+
+.name-label-and-text {
+    margin-bottom: .6rem;
 }
 
 form.details .date {
@@ -179,6 +189,7 @@ form.details .date {
     border-radius: 5px;
     background-color: var(--color-neutral-very-dark-violet);
     color: var(--color-neutral-white);
+    cursor: pointer;
 }
 
 
@@ -186,6 +197,14 @@ form.details .textfield:focus {
     outline-color: var(--color-primary-active-input-border);
 }
 
+.error-msg {
+    margin-top: 8px;
+    color: var(--color-primary-input-errors);
+    font-size: 14px;
+}
 
+.confirm:hover {
+    opacity: 0.8;
+}
 
 /* form details end */
