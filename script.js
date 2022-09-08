@@ -29,10 +29,10 @@ function displayError(value, length, text, maxLength) {
 }
 
 
-let numberError = false;
-let nameError = false;
-let dateError = false;
-let letCvc = false;
+let nameError = true;
+let numberError = true;
+let dateError = true;
+let cvcError = true;
 
 function errorCheckAndInsert(e, textfield) {
 
@@ -42,6 +42,9 @@ function errorCheckAndInsert(e, textfield) {
 
         if (textfield.value.length === 0) {
             cardName.textContent = "JANE APPLESEED";
+            nameError = true;
+        } else {
+            nameError = false;
         }
     } 
         
@@ -118,10 +121,10 @@ function errorCheckAndInsert(e, textfield) {
         let errorText = displayError(textfield.value, textfield.value.length, cvcErrorMsg.textContent, 4);
         if (errorText != "") {
             cvcErrorMsg.textContent = errorText;
-            letCvc = true;
+            cvcError = true;
             return true;
         } else {
-            letCvc = false;
+            cvcError = false;
             cvcErrorMsg.textContent = "";
         }
 
@@ -147,6 +150,7 @@ textfields.forEach(textfield => {
 
 
 
+
 // show complete state
 const formDetials = document.querySelector(".details");
 const completeState = document.querySelector(".complete-state");
@@ -156,8 +160,13 @@ const confirmBtn = document.querySelector(".confirm");
 const continueBtn = document.querySelector(".continue");
 
 confirmBtn.addEventListener("click", () => {
-    formDetials.style = "display: none;";
-    completeState.style = "display: flex;";
+
+    console.log(nameError, numberError, dateError, cvcError);
+
+    if (!(nameError || numberError || dateError || cvcError)) {
+        formDetials.style = "display: none;";
+        completeState.style = "display: flex;";
+    }
 });
 
 continueBtn.addEventListener("click", () => {
